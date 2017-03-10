@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uno</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+    <h1>Selectionnez une partie dans la liste ci-dessous</h1>
+    <% if(Object.keys(games).length > 0){ %>
+    <form method="post" action="/new_game">
+        <input type="text" name="login" placeholder="Choissisez un login"><br/>
+        <select name="game_name">
+            <% for (var prop in games ) { %>
+            <option><%- prop %></option>
+            <% } %>
+        </select><br/><br/>
+        <button type="submit">Valider</button>
+    </form>
+    <% } else{ %>
+        <h3>Désolé aucune partie disponible pour le moment (n'hésitez pas a créé votre propre partie !)</h3><br/><br/>
+        <a href="/new_game">Créé une partie</a>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uno</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+    <h1 class="title"><%= nbplayers %></h1>
+    <h3>Players in game</h3>
+    <div id="block_players">
+        <% for (var prop in players ) { %>
+        <div class="players_name"><%- prop %></div>
+        <% } %>
+    </div>
+    <div id="card_players">
+
+    </div>
+    <div id="deck_end"></div>
+    <div id="card_container"></div>
+
+    <button id="bottom_right">Lancez la partie</button>
+</body>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="../javascript/client.js"></script>
+</html>
